@@ -43,5 +43,19 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 [MIT License](LICENSE)
 
 ## Acknowledgments
-- [U8glib library](https://github.com/olikraus/u8glib) by Oliver Kraus
+- 
 - [AccelStepper library](https://www.airspayce.com/mikem/arduino/AccelStepper/) by Mike McCauley
+
+Apologies for the confusion in my previous responses. The correct library for the U8g2 display is the U8g2 library, not the U8glib library. You can download the U8g2 library from the following link:
+
+[U8g2 library](https://github.com/olikraus/U8g2_Arduino)
+
+Once you have downloaded the library, you can install it in the Arduino IDE by following these steps:
+
+1. Open the Arduino IDE.
+2. Go to "Sketch" -> "Include Library" -> "Add .ZIP Library".
+3. Browse to the location where you downloaded the U8g2 library .zip file and select it.
+4. Click the "Open" button.
+5. The library will be installed, and you can now use the U8g2 library in your Arduino sketches.
+
+Please note that the U8g2 library provides extensive documentation and examples to help you understand and use the library effectively. You can refer to the library's documentation and examples to explore the various features and capabilities of the U8g2 library with your specific display.
