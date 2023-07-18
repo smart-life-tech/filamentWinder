@@ -21,7 +21,9 @@
 #define MAX_SPEED 1000
 #define ACCELERATION 500
 // Define the display type and rotation
-U8G2_ST7920_128X64_1_SW_SPI u8g(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 8, /* reset=*/ 9);
+//U8G2_ST7920_128X64_1_SW_SPI u8g(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 8, /* reset=*/ 9);
+//// Define the display type and rotation
+U8G2_ST7920_128X64_1_SW_SPI u8g(U8G2_R2, /* clock=*/ 23, /* data=*/ 25, /* cs=*/ 17, /* reset=*/ 16);
 
 //U8GLIB_ST7920_128X64_1X u8g(LCD_PIN_EN, LCD_PIN_RS, LCD_PIN_D4, LCD_PIN_D5, LCD_PIN_D6, LCD_PIN_D7);
 AccelStepper stepper1(AccelStepper::DRIVER, MOTOR1_STEP_PIN, MOTOR1_DIR_PIN);

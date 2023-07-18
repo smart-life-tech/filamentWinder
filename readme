@@ -57,5 +57,3 @@ Once you have downloaded the library, you can install it in the Arduino IDE by f
 3. Browse to the location where you downloaded the U8g2 library .zip file and select it.
 4. Click the "Open" button.
 5. The library will be installed, and you can now use the U8g2 library in your Arduino sketches.
-
-Please note that the U8g2 library provides extensive documentation and examples to help you understand and use the library effectively. You can refer to the library's documentation and examples to explore the various features and capabilities of the U8g2 library with your specific display.
