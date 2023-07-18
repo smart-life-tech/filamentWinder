@@ -1,0 +1,47 @@
+# Stepper Motor Control with LCD and Encoder
+
+This Arduino sketch demonstrates controlling two stepper motors using the HiLetgo 3D Printer Reprap Smart Controller 12864 LCD Display, an encoder, and a button. The stepper motors are connected through the RAMPS 1.4 Arduino Mega shield.
+
+## Hardware Requirements
+- Arduino Mega board
+- RAMPS 1.4 shield
+- HiLetgo 3D Printer Reprap Smart Controller 12864 LCD Display
+- Two stepper motors
+- Two end stop switches
+- Buzzer
+- Encoder
+
+## Circuit Diagram
+Insert a circuit diagram here to illustrate the connections between the components.
+
+## Installation and Usage
+1. Connect the components according to the circuit diagram.
+2. Open the Arduino IDE.
+3. Install the U8glib and AccelStepper libraries if not already installed.
+4. Open the `stepper_control.ino` sketch.
+5. Select the appropriate board and port from the Arduino IDE.
+6. Upload the sketch to the Arduino board.
+7. Monitor the LCD display for the motor control and distance readings.
+
+## Functionality
+- The LCD display shows "Hello, World!" on the screen.
+- Adjust the speed of stepper1 using the encoder.
+- Press the button to activate the buzzer.
+- The distance encoder measures wire distance and displays the value on the LCD screen.
+- Two end stop switches change the direction of the corresponding stepper motor when activated.
+
+## Customization
+- Adjust the pin connections according to your wiring setup.
+- Modify the `MAX_SPEED` and `ACCELERATION` constants to change the speed and acceleration of the stepper motors.
+- Customize the LCD messages and formatting as needed.
+- Adapt the code to your specific requirements and additional functionality.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT License](LICENSE)
+
+## Acknowledgments
+- [U8glib library](https://github.com/olikraus/u8glib) by Oliver Kraus
+- [AccelStepper library](https://www.airspayce.com/mikem/arduino/AccelStepper/) by Mike McCauley
