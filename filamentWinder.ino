@@ -1,4 +1,4 @@
-#include <U8glib.h>
+#include <U8g2lib.h>
 #include <AccelStepper.h>
 
 // Define the pin connections
@@ -20,8 +20,10 @@
 // Define the maximum speed and acceleration for the stepper motors
 #define MAX_SPEED 1000
 #define ACCELERATION 500
+// Define the display type and rotation
+U8G2_ST7920_128X64_1_SW_SPI u8g(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 8, /* reset=*/ 9);
 
-U8GLIB_ST7920_128X64_1X u8g(LCD_PIN_EN, LCD_PIN_RS, LCD_PIN_D4, LCD_PIN_D5, LCD_PIN_D6, LCD_PIN_D7);
+//U8GLIB_ST7920_128X64_1X u8g(LCD_PIN_EN, LCD_PIN_RS, LCD_PIN_D4, LCD_PIN_D5, LCD_PIN_D6, LCD_PIN_D7);
 AccelStepper stepper1(AccelStepper::DRIVER, MOTOR1_STEP_PIN, MOTOR1_DIR_PIN);
 AccelStepper stepper2(AccelStepper::DRIVER, MOTOR2_STEP_PIN, MOTOR2_DIR_PIN);
 
@@ -35,7 +37,7 @@ void setup()
     pinMode(ENCODER_PIN_B, INPUT_PULLUP);
     pinMode(BUTTON_PIN, INPUT_PULLUP);
 
-    u8g.setRot180();             // Set the display rotation if needed
+   // u8g.setRot180();             // Set the display rotation if needed
     u8g.setFont(u8g_font_8x13B); // Set the font for text
 
     // Initialize the LCD
@@ -81,7 +83,7 @@ void loop()
         lastEncoderValue = encoderPinA;
 
         // Display the encoder value on the screen
-        u8g.setPrintPos(10, 50);
+       // u8g.setPrintPos(10, 50);
         u8g.print("Encoder: ");
         u8g.print(encoderValue);
 
