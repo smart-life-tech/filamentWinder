@@ -89,12 +89,14 @@ void resetCounter()
 void loop()
 {
     distance = ((2 * pi * R) / N) * getCounter();
+    if (distance <= 0)
+        distance = 0;
     lcd.setCursor(0, 0);
     lcd.print("Distance: / cms");
     lcd.setCursor(0, 1);
     lcd.print(distance);
     lcd.print("        ");
-    while (distance >= value)
+    if (distance > value)
     {
         tone(buzzerPin, 1000, 2000);
         noTone(buzzerPin);
@@ -104,7 +106,7 @@ void loop()
         {
             resetCounter();
             distance = 0;
-            break;
+            // break;
         }
     }
     if (digitalRead(OK_BUTTON_PIN) == LOW)
