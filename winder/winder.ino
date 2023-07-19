@@ -25,6 +25,7 @@ float distance = 0;
 void setup()
 {
     // Initialize LCD
+    Serial.begin(9600);
     lcd.init();
     lcd.backlight();
     lcd.setCursor(0, 0);
@@ -102,28 +103,36 @@ void loop()
         noTone(buzzerPin);
         tone(buzzerPin, 1000, 2000);
         noTone(buzzerPin);
-        if (digitalRead(OK_BUTTON_PIN) == LOW)
-        {
-            resetCounter();
-            distance = 0;
-            // break;
-        }
+        //    if (digitalRead(OK_BUTTON_PIN) == LOW)
+        // {
+        //  resetCounter();
+        //   distance = 0;
+        // break;
+        // }
     }
     if (digitalRead(OK_BUTTON_PIN) == LOW)
     {
         resetCounter();
+        Serial.println("button pressed");
         delay(1000);
         lcd.clear();
-        do
+        lcd.print("Value: ");
+        lcd.setCursor(7, 0);
+        lcd.print("   "); // Clear previous value
+        lcd.setCursor(7, 0);
+        lcd.print(value);
+        while (1)
         {
             setDistance();
             if (!digitalRead(OK_BUTTON_PIN))
             {
+                Serial.println("done");
                 delay(1000);
+                lcd.clear();
                 break;
             }
             /* code */
-        } while (1);
+        }
     }
 }
 
@@ -146,6 +155,8 @@ void setDistance()
     if (downButtonState == LOW)
     {
         value--;
+        if (value < 0)
+            value = 0;
         lcd.setCursor(7, 0);
         lcd.print("   "); // Clear previous value
         lcd.setCursor(7, 0);
