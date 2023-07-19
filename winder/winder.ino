@@ -11,7 +11,7 @@ const int DOWN_BUTTON_PIN = 7;
 const int OK_BUTTON_PIN = 8;
 // EEPROM address to store the value
 const int EEPROM_ADDRESS = 0;
-
+int buzzerPin = 9;
 int value = 0;       // The value to be set
 int storedValue = 0; // The value stored in EEPROM
 
@@ -103,7 +103,7 @@ void loop()
         if (digitalRead(OK_BUTTON_PIN) == LOW)
         {
             resetCounter();
-            distance=0;
+            distance = 0;
             break;
         }
     }

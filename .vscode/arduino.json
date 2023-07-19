@@ -1,6 +1,6 @@
 {
     "configuration": "cpu=atmega2560",
     "board": "arduino:avr:mega",
-    "sketch": "filamentWinder.ino",
+    "sketch": "winder\\winder.ino",
     "programmer": "arduino:avrisp"
 }
