@@ -97,9 +97,9 @@ void loop()
     while (distance >= value)
     {
         tone(buzzerPin, 1000, 2000);
-        noTone();
+        noTone(buzzerPin);
         tone(buzzerPin, 1000, 2000);
-        noTone();
+        noTone(buzzerPin);
         if (digitalRead(OK_BUTTON_PIN) == LOW)
         {
             resetCounter();
