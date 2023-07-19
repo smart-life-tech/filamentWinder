@@ -6,9 +6,9 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define outputB 3 // DT pin
 #define rstbtn 4  // reset button pin
 // Button pins
-const int UP_BUTTON_PIN = 3;
-const int DOWN_BUTTON_PIN = 4;
-const int OK_BUTTON_PIN = 5;
+const int UP_BUTTON_PIN = 6;
+const int DOWN_BUTTON_PIN = 7;
+const int OK_BUTTON_PIN = 8;
 // EEPROM address to store the value
 const int EEPROM_ADDRESS = 0;
 
@@ -94,7 +94,19 @@ void loop()
     lcd.setCursor(0, 1);
     lcd.print(distance);
     lcd.print("        ");
-
+    while (distance >= value)
+    {
+        tone(buzzerPin, 1000, 2000);
+        noTone();
+        tone(buzzerPin, 1000, 2000);
+        noTone();
+        if (digitalRead(OK_BUTTON_PIN) == LOW)
+        {
+            resetCounter();
+            distance=0;
+            break;
+        }
+    }
     if (digitalRead(OK_BUTTON_PIN) == LOW)
     {
         resetCounter();
