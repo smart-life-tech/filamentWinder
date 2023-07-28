@@ -12,6 +12,7 @@ const int OK_BUTTON_PIN = 8;
 // EEPROM address to store the value
 const int EEPROM_ADDRESS = 0;
 int buzzerPin = 9;
+uint16_t led = 10;
 int value = 0;       // The value to be set
 int storedValue = 0; // The value stored in EEPROM
 
@@ -47,7 +48,7 @@ void setup()
     pinMode(UP_BUTTON_PIN, INPUT_PULLUP);
     pinMode(DOWN_BUTTON_PIN, INPUT_PULLUP);
     pinMode(OK_BUTTON_PIN, INPUT_PULLUP);
-
+    pinMode(led, OUTPUT);
     // Initialize encoder pins
     pinMode(outputA, INPUT);
     pinMode(outputB, INPUT);
@@ -103,12 +104,17 @@ void loop()
         noTone(buzzerPin);
         tone(buzzerPin, 1000, 2000);
         noTone(buzzerPin);
+        digitalWrite(led, HIGH);
         //    if (digitalRead(OK_BUTTON_PIN) == LOW)
         // {
         //  resetCounter();
         //   distance = 0;
         // break;
         // }
+    }
+    else
+    {
+        digitalWrite(led, LOW);
     }
     if (digitalRead(OK_BUTTON_PIN) == LOW)
     {
